@@ -37,6 +37,13 @@ class SingUpPage {
        
     }
 
+    fillIncompletePersonalDetails(firstName, password, confirmPassword ) {
+        cy.get(this.selectorsList().firstNameField).clear().type(firstName)
+        cy.get(this.selectorsList().passwordField).clear().type(password)
+        cy.get(this.selectorsList().confirmPassWord).clear().type(confirmPassword)
+        
+    }
+
 }
 
 

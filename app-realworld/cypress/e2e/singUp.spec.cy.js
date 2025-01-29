@@ -6,10 +6,10 @@ import SingUpPage from '../pages/singUpPage'
 const loginPage = new LoginPage()
 const singUpPage = new SingUpPage()
 
-describe('Realworld App Tests', () => {
+describe('Sing Up Realworld App Tests', () => {
 
 
-  it('Sing up a New User', () => {
+  it('New User Registration', () => {
     loginPage.accessLoginPage()
     loginPage.singUpButton()
 
@@ -18,4 +18,16 @@ describe('Realworld App Tests', () => {
     singUpPage.fillPersonalDetails('fabricio', 'diias', 'diiasfabricio','1234','1234' )    
     singUpPage.saveForm()
   })
+
+  it('New User Registration with incomplete data - fail', () => {
+    loginPage.accessLoginPage()
+    loginPage.singUpButton()
+
+    singUpPage.checkSingUpPage()
+
+    singUpPage.fillIncompletePersonalDetails('fabricio','1234','1234' )    
+    cy.get('[href="/signup"]').should('not.exist')
+
+  })
 })
+
