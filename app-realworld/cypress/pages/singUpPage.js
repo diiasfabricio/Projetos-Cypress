@@ -16,18 +16,18 @@ class SingUpPage {
     }
 
     checkSingUpPage () {
-        cy.location('pathname').should('equal', 'http://localhost:3000/signup')
+        cy.location('pathname').should('equal', '/signup')
         cy.get(this.selectorsList().singUpGrid).should('be.visible')
 
     }
 
 
     fillPersonalDetails(firstName, lastName, userName, password, confirmPassword ) {
-        cy.get(this.selectorsList().firstNameField).clear().type(Fabricio)
-        cy.get(this.selectorsList().lastNameField).clear().type(Dias)
-        cy.get(this.selectorsList().userNameField).clear().type(diiasfabricio)
-        cy.get(this.selectorsList().passwordField).clear().type(1234)
-        cy.get(this.selectorsList().confirmPassWord).clear().type(1234)
+        cy.get(this.selectorsList().firstNameField).clear().type(firstName)
+        cy.get(this.selectorsList().lastNameField).clear().type(lastName)
+        cy.get(this.selectorsList().userNameField).clear().type(userName)
+        cy.get(this.selectorsList().passwordField).clear().type(password)
+        cy.get(this.selectorsList().confirmPassWord).clear().type(confirmPassword)
         
     }
 

@@ -6,16 +6,16 @@ import SingUpPage from '../pages/singUpPage'
 const loginPage = new LoginPage()
 const singUpPage = new SingUpPage()
 
-describe('Realworld App Tests'), () => {
+describe('Realworld App Tests', () => {
 
 
-  it('Sing up a New User'), () => {
+  it('Sing up a New User', () => {
     loginPage.accessLoginPage()
     loginPage.singUpButton()
 
     singUpPage.checkSingUpPage()
 
-    singUpPage.fillPersonalDetails()    
+    singUpPage.fillPersonalDetails('fabricio', 'diias', 'diiasfabricio','1234','1234' )    
     singUpPage.saveForm()
-  }
-}
+  })
+})

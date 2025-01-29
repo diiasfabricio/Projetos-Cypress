@@ -24,6 +24,7 @@ class LoginPage {
         cy.get(this.selectorsList().userNameField).type(username)
         cy.get(this.selectorsList().passwordField).type(password)
         cy.get(this.selectorsList().loginButton).click()
+        
     }
 
     checkAccessIvalid() {
